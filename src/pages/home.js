@@ -28,15 +28,23 @@ export function Home(){
         window.location.reload(false);
     }
 
+    function ClearAll(){
+        Storage.removeItem("notes");
+        history.go(0)
+    }
+
     return(
         <div>
-            <span className="page title">Home Page!</span>
+            <h2 class="content-start text-2xl justify-items-start">Welcome, let's take some notes</h2>
             <div className="empty">
-                <p>This page is empty</p>
-                <div>
-                    <button title="Add Note" onClick={() => {
+                <div class="flex flex-row">
+                    <button class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg text-base font-semibold text-white " onClick={() => {
                         history.push("/add")
-                    }}>Add Note</button>
+                        }}>Add Note
+                    </button>
+                    <button class="bg-red-500 hover:bg-red-700 p-2 rounded-lg text-base font-semibold text-black" onClick={ClearAll}>
+                        Clear All
+                    </button>
                 </div>
 
                 {renderNotes()}

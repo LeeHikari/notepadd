@@ -9,13 +9,9 @@ export function Add(){
     const [notes, setNotes] = useState([]);
     const history = useHistory();
 
-
     useEffect(() => {
         setNotes(Storage.getItem("notes", []))
     },[]) 
-
-    // https://reactrouter.com/web/api/Hooks
-    // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
     function onNoteTitleChange(event){
         let newNoteTitle = event.target.value;
@@ -31,18 +27,20 @@ export function Add(){
 
     return(
         <div>
-            <span className="page title">Add Page</span>
-            <div className="addPage">
+            <span class="text-4xl font-black font-serif text-black text-center">Add Page</span>
+            <div class="border border-gray-300">
                 <div>
                     <form>
                         <input
-                            id="noteTitleInput"
+                            class="border border-gray-300 pb-5"
                             type="text"
                             value={noteTitle}
                             onChange={onNoteTitleChange}
                             placeholder="Title"
                         />
+                        <br/>
                         <textarea
+                            class="border border-gray-300"
                             id="noteBodyInput"
                             value={noteBody}
                             onChange={onNoteBodyChange}
@@ -50,11 +48,10 @@ export function Add(){
                         />
                     </form>
                 </div>
-                <button title='Submit' onClick={()=>{
-
+                <button class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg text-base font-semibold text-white " title='Submit' onClick={()=>{
                     Storage.setItem("notes", [...notes, {noteBody, noteTitle}])
                     history.push("/")
-                }}/>
+                }}>Submit</button>
             </div>
         </div>
     );
