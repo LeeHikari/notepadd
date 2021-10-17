@@ -26,32 +26,39 @@ export function Add(){
     }
 
     return(
-        <div>
+        <div class="p-5">
             <span class="text-4xl font-black font-serif text-black text-center">Add Page</span>
-            <div class="border border-gray-300">
+            <div class="m-6 p-2 border-2 border-black rounded-lg">
                 <div>
                     <form>
+                        <label class="text-lg font-black font-serif text-black">Title</label>
+                        <br/>
                         <input
-                            class="border border-gray-300 pb-5"
+                            class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full"
                             type="text"
                             value={noteTitle}
                             onChange={onNoteTitleChange}
-                            placeholder="Title"
+                            placeholder="Holiday Plans"
                         />
                         <br/>
+                        <label class="text-lg font-black font-serif text-black">Body</label>
+                        <br/>
                         <textarea
-                            class="border border-gray-300"
+                            class="resize bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full"
                             id="noteBodyInput"
                             value={noteBody}
                             onChange={onNoteBodyChange}
-                            placeholder="Say something"
+                            placeholder="Meet Emma at 1:30pm @ Melbourne Art Centre"
                         />
                     </form>
                 </div>
-                <button class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg text-base font-semibold text-white " title='Submit' onClick={()=>{
+                <div class="p-2">
+                <button class="bg-blue-500 hover:bg-blue-700 p-3 rounded-lg text-base font-semibold text-white " title='Submit' onClick={()=>{
                     Storage.setItem("notes", [...notes, {noteBody, noteTitle}])
                     history.push("/")
                 }}>Submit</button>
+                </div>
+
             </div>
         </div>
     );
