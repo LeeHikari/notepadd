@@ -28,7 +28,7 @@ export function Add(){
     return(
         <div class="p-5">
             <span class="text-4xl font-black font-serif text-black text-center">Add Page</span>
-            <div class="m-6 p-2 border-2 border-black rounded-lg">
+            <div class="m-6 p-2 border shadow rounded-lg">
                 <div>
                     <form>
                         <label class="text-lg font-black font-serif text-black">Title</label>
@@ -53,7 +53,7 @@ export function Add(){
                     </form>
                 </div>
                 <div class="p-2">
-                <button class="bg-blue-500 hover:bg-blue-700 p-3 rounded-lg text-base font-semibold text-white " title='Submit' onClick={()=>{
+                <button class="bg-blue-500 hover:bg-blue-700 p-3 rounded-lg text-base font-semibold text-white" title='Submit' onClick={()=>{
                     Storage.setItem("notes", [...notes, {noteBody, noteTitle}])
                     history.push("/")
                 }}>Submit</button>

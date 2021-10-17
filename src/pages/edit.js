@@ -40,29 +40,38 @@ export function Edit() {
     }
 
     return (
-        <div>
-            <span className="page title">Edit Page</span>
-            <div className="editPage">
+        <div class="p-5">
+            <span class="text-4xl font-black font-serif text-black text-center">Edit Page</span>
+            <div class="m-6 p-2 border-2 shadow-md rounded-lg">
                 <div>
                     <form>
+                        <label class="text-lg font-black font-serif text-black">Title</label>
+                        <br/>
                         <input
-                            id="noteTitleInput"
+                            class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full"
                             type="text"
                             value={noteTitle}
                             onChange={onNoteTitleChange}
-                            placeholder="Title"
+                            placeholder="Holiday Plans"
                         />
-                        <br />
+                        <br/>
+                        <label class="text-lg font-black font-serif text-black">Body</label>
+                        <br/>
                         <textarea
+                            class="resize bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full"
                             id="noteBodyInput"
                             value={noteBody}
                             onChange={onNoteBodyChange}
-                            placeholder="Say something"
+                            placeholder="Meet Emma at 1:30pm @ Melbourne Art Centre"
                         />
                     </form>
                 </div>
-                <button title='Edit' onClick={EditNote}>Submit Edit</button>
+                <div class="p-2">
+                    <button class="bg-blue-500 hover:bg-blue-700 p-3 rounded-lg text-base font-semibold text-white" title='Edit' onClick={EditNote}>Submit</button>
+                </div>
             </div>
         </div>
+
+//
     );
 }

@@ -33,8 +33,8 @@ export function Home(){
     }
 
     return(
-        <div>
-            <h2 class="content-start text-2xl justify-items-start">Welcome, let's take some notes</h2>
+        <div class="p-5">
+            <h2 class="text-center font-semibold text-2xl">Welcome, let's take some notes</h2>
             <div className="empty">
                 <div class="flex space-x-2">
                     <button class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg text-base font-semibold text-white " onClick={() => {
@@ -45,7 +45,6 @@ export function Home(){
                         Clear All
                     </button>
                 </div>
-
                 {renderNotes()}
             </div>
         </div>
