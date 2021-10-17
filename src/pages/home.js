@@ -21,7 +21,6 @@ export function Home(){
     }
 
     function deleteNote(index) {
-        // const result = notes.filter((note)=>note.index !== index);
         notes.splice(index, 1);
         setNotes(notes);
         Storage.setItem("notes", notes);
@@ -37,7 +36,7 @@ export function Home(){
         <div>
             <h2 class="content-start text-2xl justify-items-start">Welcome, let's take some notes</h2>
             <div className="empty">
-                <div class="flex flex-row">
+                <div class="flex space-x-2">
                     <button class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg text-base font-semibold text-white " onClick={() => {
                         history.push("/add")
                         }}>Add Note

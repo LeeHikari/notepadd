@@ -11,14 +11,18 @@ export function Row({ note, index, onDelete }) {
     }
 
     return (
-        <div style={{ border: '1px solid black' }}>
-            {index}:
-            {note.noteTitle}
+        <div class="m-6 p-2 border-2 border-black rounded-lg">
+            {index + 1}:
+            <br/>
+            <span class="text-2xl font-black font-serif text-black text-center">{note.noteTitle}</span>
             <br />
             {note.noteBody}
-            <button onClick={() => navigateEditOnClick(index)}>Edit</button>
-            <button onClick={() => onDelete(index)}>Delete</button>
+            <div class="flex space-x-2 pt-2">
+                <button class="bg-green-500 hover:bg-green-700 p-2 rounded-lg text-base font-semibold text-white" onClick={() => navigateEditOnClick(index)}>Edit</button>
+                <button class="bg-red-500 hover:bg-red-700 p-2 rounded-lg text-base font-semibold text-black" onClick={() => onDelete(index)}>Delete</button>
+            </div>
         </div>
+
 
     );
 }
