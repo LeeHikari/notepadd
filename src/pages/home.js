@@ -34,9 +34,9 @@ export function Home(){
 
     return(
         <div class="p-5">
-            <h2 class="text-center font-semibold text-2xl">Welcome, let's take some notes</h2>
             <div className="empty">
-                <div class="flex space-x-2">
+                <div class="flex space-x-2 mt-2">
+                <span class="text-4xl font-black font-serif text-black text-center">Home</span>
                     <button class="bg-blue-500 hover:bg-blue-700 p-2 rounded-lg text-base font-semibold text-white " onClick={() => {
                         history.push("/add")
                         }}>Add Note

@@ -41,7 +41,13 @@ export function Edit() {
 
     return (
         <div class="p-5">
-            <span class="text-4xl font-black font-serif text-black text-center">Edit Page</span>
+            <div class="flex space-x-2 mt-2">
+                <span class="text-4xl font-black font-serif text-black text-center">Edit Page</span>
+                <button class="bg-red-500 hover:bg-red-700 p-2 rounded-lg text-base font-semibold text-black" 
+                onClick={() => history.push("/")}>
+                    Back
+                </button>
+            </div>
             <div class="m-6 p-2 border-2 shadow-md rounded-lg">
                 <div>
                     <form>
